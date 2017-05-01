@@ -135,9 +135,9 @@ vicious.register(memused, vicious.widgets.mem,
 -- RAM bar
 membar = awful.widget.progressbar()
 membar:set_vertical(false)
-membar:set_width(graphwidth)
+membar:set_width(graphwidth*2)
 membar:set_height(graphheight)
-membar:set_ticks(false):set_ticks_size(2)
+membar:set_ticks(false):set_ticks_size(4)
 membar:set_border_color(nil)
 membar:set_background_color(beautiful.bg_widget)
 membar:set_color({
@@ -265,7 +265,7 @@ vicious.register(netwidget, vicious.widgets.net, '<span color="#CC9933">down: ${
 -- {{{ Weather
 weather = wibox.widget.textbox()
 vicious.register(weather, vicious.widgets.weather,
-  "<span color='" .. beautiful.fg_em .. "'>${sky}</span> @ ${tempf}°F on",
+  "<span color='" .. beautiful.fg_em .. "'>${sky}</span> @ ${tempc}°C on",
   1501, "XXXX")
 weather:buttons(awful.util.table.join(awful.button({ }, 1,
   function() vicious.force({ weather }) end)))
